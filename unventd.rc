@@ -1,0 +1,34 @@
+# MyLinux device-event configuration
+# Android init ueventd syntax
+
+subsystem input
+    devname uevent_devname
+    dirname /dev/input
+
+subsystem graphics
+    devname uevent_devname
+    dirname /dev/graphics
+
+subsystem drm
+    devname uevent_devname
+    dirname /dev/dri
+
+subsystem sound
+    devname uevent_devname
+    dirname /dev/snd
+
+subsystem usb
+    devname uevent_devname
+    dirname /dev/bus/usb
+
+# Generic device permissions
+/dev/null                 0666   root root
+/dev/zero                 0666   root root
+/dev/full                 0666   root root
+/dev/random               0666   root root
+/dev/urandom              0666   root root
+/dev/console              0600   root root
+/dev/kmsg                 0600   root root
+
+# Android-style device symlink handling
+firmware_directories /vendor/firmware /lib/firmware
