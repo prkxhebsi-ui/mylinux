@@ -1,0 +1,51 @@
+# MyLinux ARM64 configuration
+# Target: Samsung Galaxy Tab A 8.0 (SM-T295)
+# Codename: gto
+#
+# This is an initial configuration template.
+# It is not yet a complete, verified Linux kernel defconfig.
+
+CONFIG_64BIT=y
+CONFIG_ARM64=y
+CONFIG_MMU=y
+CONFIG_SMP=y
+CONFIG_MODULES=y
+CONFIG_PRINTK=y
+CONFIG_BUG=y
+CONFIG_ELF_CORE=y
+
+# Device tree support
+CONFIG_OF=y
+CONFIG_OF_FLATTREE=y
+CONFIG_OF_EARLY_FLATTREE=y
+
+# Basic device support
+CONFIG_BLOCK=y
+CONFIG_DEVTMPFS=y
+CONFIG_DEVTMPFS_MOUNT=y
+CONFIG_PROC_FS=y
+CONFIG_SYSFS=y
+CONFIG_TMPFS=y
+
+# Console and diagnostics
+CONFIG_TTY=y
+CONFIG_SERIAL_CORE=y
+CONFIG_SERIAL_CORE_CONSOLE=y
+CONFIG_DEBUG_KERNEL=y
+CONFIG_PRINTK_TIME=y
+
+# Filesystems
+CONFIG_EXT4_FS=y
+CONFIG_FAT_FS=y
+CONFIG_VFAT_FS=y
+
+# Networking
+CONFIG_NET=y
+CONFIG_INET=y
+CONFIG_PACKET=y
+CONFIG_UNIX=y
+
+# Initial development settings
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
+CONFIG_MAGIC_SYSRQ=y
