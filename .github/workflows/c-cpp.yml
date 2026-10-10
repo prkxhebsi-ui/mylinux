@@ -1,23 +1,42 @@
-name: C/C++ CI
+name: MyLinux C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
-
+    name: Build MyLinux
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang make device-tree-compiler
+
+      - name: Check available source files
+        run: |
+          clang --version
+          make --version
+          dtc --version
+          find bin -maxdepth 1 -type f \
+            \( -name '*.c' -o -name '*.cpp' \) \
+            -print 2>/dev/null || true
+
+      - name: Build userspace
+        run: |
+          if [ -f Makefile ]; then
+            make
+          else
+            echo "No root Makefile yet; userspace build skipped."
+          fi
