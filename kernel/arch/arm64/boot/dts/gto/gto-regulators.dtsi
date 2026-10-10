@@ -1,0 +1,38 @@
+/ {
+    mylinux-regulator-info {
+        compatible = "mylinux,gto-regulator-info";
+
+        /*
+         * Samsung SM-T295 (gto)
+         * Qualcomm platform
+         *
+         * This node documents regulator status only.
+         * It does not control physical voltage rails.
+         *
+         * Add actual regulator nodes after verifying the
+         * stock device tree and Qualcomm PMIC configuration.
+         */
+
+        regulator-data-status = "unverified";
+
+        main-supply-info {
+            label = "main-supply";
+            status = "disabled";
+        };
+
+        cpu-supply-info {
+            label = "cpu-supply";
+            status = "disabled";
+        };
+
+        gpu-supply-info {
+            label = "gpu-supply";
+            status = "disabled";
+        };
+
+        memory-supply-info {
+            label = "memory-supply";
+            status = "disabled";
+        };
+    };
+};
