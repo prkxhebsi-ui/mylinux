@@ -1,0 +1,21 @@
+#!/bin/sh
+# MyLinux early system initialization
+
+set -eu
+
+echo "MyLinux: starting system initialization"
+
+# Mount essential virtual filesystems if not already mounted.
+if ! grep -q ' /proc ' /proc/mounts 2>/dev/null; then
+    mount -t proc proc /proc
+fi
+
+if ! grep -q ' /sys ' /proc/mounts 2>/dev/null; then
+    mount -t sysfs sysfs /sys
+fi
+
+if ! grep -q ' /dev ' /proc/mounts 2>/dev/null; then
+    mount -t devtmpfs devtmpfs /dev
+fi
+
+echo "MyLinux: early initialization complete"
