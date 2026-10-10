@@ -1,0 +1,20 @@
+/ {
+    mylinux-device-info {
+        compatible = "mylinux,device-info";
+
+        device-name = "Samsung Galaxy Tab A 8.0";
+        device-model = "SM-T295";
+        device-codename = "gto";
+        device-country = "BD";
+
+        architecture = "arm64";
+        chipset = "Qualcomm";
+        gpu = "Qualcomm Adreno 504";
+
+        bootloader-version = "T295XXS6CWG2";
+        android-build-id = "RP1A.200720.012";
+        android-build-display = "RP1A.200720.012.T295XXS6CWG2";
+
+        avb-enabled;
+    };
+};
