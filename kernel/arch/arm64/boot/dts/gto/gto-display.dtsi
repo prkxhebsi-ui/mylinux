@@ -1,0 +1,23 @@
+/ {
+    mylinux-display-info {
+        compatible = "mylinux,gto-display-info";
+
+        device-model = "SM-T295";
+        display-data-status = "unverified";
+
+        /*
+         * Display hardware details must be verified against
+         * the matching stock device tree.
+         *
+         * Do not guess panel timings, GPIO numbers, regulator
+         * names, DSI lane settings, or register addresses.
+         */
+
+        display-interface = "unknown";
+        panel-compatible = "unknown";
+        display-resolution = "unknown";
+
+        touchscreen-status = "unverified";
+        backlight-status = "unverified";
+    };
+};
