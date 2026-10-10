@@ -1,0 +1,17 @@
+# MyLinux Android-style init configuration
+
+on early-init
+    mkdir /dev 0755 root root
+    mount devtmpfs devtmpfs /dev
+    mkdir /proc 0755 root root
+    mount proc proc /proc
+    mkdir /sys 0755 root root
+    mount sysfs sysfs /sys
+
+on init
+    mkdir /system 0755 root root
+    mount ext4 /dev/root /system
+
+    # Make the system filesystem the root filesystem.
+    # This requires a compatible Android init implementation
+    # and a verified root-device and partition layout.
