@@ -1,0 +1,34 @@
+# MyLinux device-specific init configuration
+# Target: Samsung Galaxy Tab A 8.0 (SM-T295)
+# Codename: gto
+
+import /init.rc
+
+on early-init
+    mkdir /dev 0755 root root
+    mkdir /dev/input 0755 root root
+    mkdir /dev/graphics 0755 root root
+    mkdir /dev/dri 0755 root root
+    mkdir /dev/snd 0755 root root
+    mkdir /dev/bus 0755 root root
+    mkdir /dev/bus/usb 0755 root root
+
+on init
+    hostname mylinux-gto
+
+    # Runtime and device paths
+    mkdir /mnt 0755 root root
+    mkdir /mnt/vendor 0755 root root
+    mkdir /metadata 0700 root root
+
+    # Device-specific hardware initialization must be added
+    # after the stock SM-T295 init files and partition layout
+    # have been verified.
+
+on late-init
+    trigger mylinux-gto-init
+
+on mylinux-gto-init
+    # Placeholder trigger for future device services.
+    # Add service definitions only when their executables,
+    # permissions, SELinux policy, and dependencies exist.
