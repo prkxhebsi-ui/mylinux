@@ -1,68 +1,20 @@
-# Prerequisites
-*.d
+Allow readable source and configuration files C, C++, headers, assembly and device trees .c .cc .cpp .cxx .h .hh .hpp .hxx .h++ .S .s .dts .dtsi .conf .config .rc .sh Compiled objects and libraries 
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+*.o *.obj *.a *.so .so. *.ko *.elf *.exe *.class *.pyc
 
-# Precompiled Headers
-*.gch
-*.pch
+Generated binaries and device images 
 
-# Linker files
-*.ilk
+*.bin *.img *.iso *.apk *.dex *.dtb *.dtbo *.cpio *.cpio.gz *.zip
 
-# Debugger Files
-*.pdb
+Generated build directories 
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
+build/ out/ dist/
 
-# Fortran module files
-*.mod
-*.smod
+Local secrets 
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+.env .env.* *.pem .key service-account.json
 
-# Executables
-*.exe
-*.out
-*.app
+Editor and operating-system files 
 
-# Build directories
-build/
-Build/
-build-*/
+.DS_Store .idea/ .vscode/
 
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
-*.log
-*.bak
-*.swp
-
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
