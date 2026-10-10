@@ -1,0 +1,25 @@
+/ {
+    mylinux-battery-info {
+        compatible = "mylinux,gto-battery-info";
+
+        device-model = "SM-T295";
+        battery-manufacturer = "Samsung";
+
+        /*
+         * The reported 24% is a snapshot, not a fixed
+         * hardware property. Real battery percentage
+         * must come from the battery/charger driver.
+         */
+
+        reported-capacity-percent = <24>;
+        capacity-value-type = "initial-observation";
+        battery-data-status = "unverified";
+
+        /*
+         * Do not invent battery voltage, capacity in mAh,
+         * temperature limits, charging current, or PMIC data.
+         * Add verified battery and charger nodes after
+         * examining the matching stock device tree.
+         */
+    };
+};
