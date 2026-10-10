@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mylinux version="1.0">
+
+    <system>
+        <name>MyLinux</name>
+        <architecture>arm64</architecture>
+        <device>
+            <manufacturer>Samsung</manufacturer>
+            <model>SM-T295</model>
+            <codename>gto</codename>
+            <product>gtoxx</product>
+        </device>
+    </system>
+
+    <hardware>
+        <platform>Qualcomm</platform>
+        <gpu>Adreno 504</gpu>
+        <battery>
+            <manufacturer>Samsung</manufacturer>
+            <capacity_percent status="snapshot">24</capacity_percent>
+        </battery>
+    </hardware>
+
+    <boot>
+        <image_format>ARM64 Linux Image</image_format>
+        <device_tree required="true"/>
+        <initramfs required="false"/>
+        <verified_boot>
+            <stock_device status="reported">enabled</stock_device>
+            <custom_image status="unverified"/>
+        </verified_boot>
+    </boot>
+
+    <filesystem>
+        <configuration_directory>/etc</configuration_directory>
+        <android_compatibility_directory>/system/etc</android_compatibility_directory>
+    </filesystem>
+
+    <services>
+        <service_manager status="prototype"/>
+        <init_configuration format="rc"/>
+    </services>
+
+</mylinux>
