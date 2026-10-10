@@ -1,0 +1,28 @@
+/ {
+    mylinux-clocks {
+        compatible = "mylinux,gto-clock-info";
+
+        /*
+         * Clock-controller information for the Samsung SM-T295.
+         *
+         * This node records the clock subsystem's status for MyLinux.
+         * It does not configure Qualcomm hardware clocks.
+         *
+         * Replace this metadata node with the verified clock-controller
+         * nodes and definitions from the matching stock device tree
+         * before using this device tree to boot the tablet.
+         */
+
+        clock-controller-status = "unverified";
+
+        clock-source-32k {
+            clock-output-names = "xo-32k";
+            status = "disabled";
+        };
+
+        clock-source-xo {
+            clock-output-names = "xo";
+            status = "disabled";
+        };
+    };
+};
